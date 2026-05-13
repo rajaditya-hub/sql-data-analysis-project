@@ -64,7 +64,7 @@ The dataset contains transactional sales data, including:
 
 
 
-🔹 Sales Performance - ![Sales by Region](screenshots/sales_by_region.png)
+🔹 Sales Performance - ![Sales by Region](sales_by_region.png)
 
 ```sql
 
@@ -80,7 +80,7 @@ ORDER BY total_sales DESC;
 
 
 
-🔹 Top Customers - ![Top customers](screenshots/top_customers.png)
+🔹 Top Customers - ![Top customers](top_customers.png)
 
 ```sql
 
@@ -98,7 +98,7 @@ LIMIT 5;
 
 
 
-🔹 Monthly Sales Trend - ![Monthly Trends](screenshots/Monthly_trend.png)
+🔹 Monthly Sales Trend - ![Monthly Trends](Monthly_trend.png)
 
 ```sql
 
@@ -118,7 +118,7 @@ ORDER BY month;
 
 
 
-🔹 Customer Ranking (Advanced) - ![Rank of customers](screenshots/rank_of_customers.png)
+🔹 Customer Ranking (Advanced) - ![Rank of customers](customer_ranking.png)
 
 ```sql
 
