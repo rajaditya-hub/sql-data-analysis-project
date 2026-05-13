@@ -1,2 +1,206 @@
-# sql-data-analysis-project
-SQL analysis of e-commerce dataset
+### 📊 SQL Data Analysis Project – E-commerce Dataset
+
+
+
+🔍 Project Overview
+
+
+
+This project analyses an e-commerce dataset using SQL to extract actionable insights on sales performance, customer behaviour, product trends, and operational efficiency.
+
+
+
+
+
+🛠️ Tools \& Technologies
+
+* MySQL
+* SQL
+
+
+
+
+
+📂 Dataset Description
+
+
+
+The dataset contains transactional sales data, including:
+
+* Order details (Order ID, Order Date, Ship Date)
+* Customer and segment information
+* Product and category details
+* Sales and profit metrics
+* Shipping modes and regional data
+
+
+
+
+
+🎯 Objectives
+
+* Evaluate overall business performance
+* Identify top-performing customers and products
+* Analyse regional and category-wise sales
+* Measure delivery efficiency
+* Detect sales trends and seasonality
+
+
+
+
+
+🚀 Project Highlights
+
+* Performed end-to-end data analysis using SQL
+* Extracted business insights from transactional data
+* Applied advanced SQL techniques, including window functions
+* Visualised trends using Excel for better interpretation
+
+
+
+
+
+📈 Key SQL Analysis
+
+
+
+🔹 Sales Performance - !\[Sales by Region](screenshots/sales\_by\_region.png)
+
+```sql
+
+SELECT Region, SUM(sales) AS total\_sales
+
+FROM orders
+
+GROUP BY Region
+
+ORDER BY total\_sales DESC;
+
+```
+
+
+
+🔹 Top Customers - !\[Top customers](screenshots/top\_customers.png)
+
+```sql
+
+SELECT `Customer Name`, SUM(sales) AS total\_spent
+
+FROM orders
+
+GROUP BY `Customer Name`
+
+ORDER BY total\_spent DESC
+
+LIMIT 5;
+
+```
+
+
+
+🔹 Monthly Sales Trend - !\[Monthly Trends](screenshots/Monthly\_trend.png)
+
+```sql
+
+SELECT 
+
+&#x20;   DATE\_FORMAT(STR\_TO\_DATE(`Order Date`, '%m/%d/%Y'), '%Y-%m') AS month,
+
+&#x20;   SUM(sales) AS total\_sales
+
+FROM orders
+
+GROUP BY month
+
+ORDER BY month;
+
+```
+
+
+
+🔹 Customer Ranking (Advanced) - !\[Rank of customers](screenshots/rank\_of\_customers.png)
+
+```sql
+
+SELECT 
+
+&#x20;   `Customer Name`,
+
+&#x20;   SUM(sales) AS total\_sales,
+
+&#x20;   RANK() OVER (ORDER BY SUM(sales) DESC) AS rank\_position
+
+FROM orders
+
+GROUP BY `Customer Name`;
+
+```
+
+
+
+
+
+💡 Key Insights
+
+
+
+* High-value customers contribute a significant portion of total revenue.
+* Certain product categories generate high sales but relatively lower profit.
+* Sales performance shows clear variation across regions, indicating uneven market distribution.
+* Monthly analysis reveals seasonal sales trends.
+* Standard shipping mode is most frequently used.
+* Average delivery time provides insights into operational efficiency.
+
+
+
+
+
+⚡ Advanced SQL Concepts Used
+
+
+
+* Aggregation (SUM, COUNT, AVG)
+* Grouping (GROUP BY, HAVING)
+* Window Functions (RANK())
+* Date Functions (STR\_TO\_DATE, DATEDIFF)
+* Sorting and Filtering
+
+
+
+
+
+📁 Project Structure
+
+
+
+* analysis.sql → SQL queries for analysis
+* README.md → Project documentation
+
+
+
+
+
+📌 Key Takeaways
+
+* Demonstrated ability to extract business insights using SQL
+* Applied analytical thinking to identify trends and patterns
+* Built a complete data analysis workflow from raw data to visualization
+
+
+
+
+
+🔗 Conclusion
+
+
+
+This project demonstrates the use of SQL to transform raw data into meaningful insights, showcasing analytical thinking and practical data analysis skills applicable in real-world business scenarios.
+
+
+
+👤 Author
+
+
+
+Aditya Raj
+
