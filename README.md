@@ -1,4 +1,4 @@
-### 📊 SQL Data Analysis Project – E-commerce Dataset
+📊 SQL Data Analysis Project – E-commerce Dataset
 
 
 
@@ -12,7 +12,7 @@ This project analyses an e-commerce dataset using SQL to extract actionable insi
 
 
 
-🛠️ Tools \& Technologies
+🛠️ Tools & Technologies
 
 * MySQL
 * SQL
@@ -64,33 +64,33 @@ The dataset contains transactional sales data, including:
 
 
 
-🔹 Sales Performance - !\[Sales by Region](screenshots/sales\_by\_region.png)
+🔹 Sales Performance - ![Sales by Region](screenshots/sales_by_region.png)
 
 ```sql
 
-SELECT Region, SUM(sales) AS total\_sales
+SELECT Region, SUM(sales) AS total_sales
 
 FROM orders
 
 GROUP BY Region
 
-ORDER BY total\_sales DESC;
+ORDER BY total_sales DESC;
 
 ```
 
 
 
-🔹 Top Customers - !\[Top customers](screenshots/top\_customers.png)
+🔹 Top Customers - ![Top customers](screenshots/top_customers.png)
 
 ```sql
 
-SELECT `Customer Name`, SUM(sales) AS total\_spent
+SELECT `Customer Name`, SUM(sales) AS total_spent
 
 FROM orders
 
 GROUP BY `Customer Name`
 
-ORDER BY total\_spent DESC
+ORDER BY total_spent DESC
 
 LIMIT 5;
 
@@ -98,15 +98,15 @@ LIMIT 5;
 
 
 
-🔹 Monthly Sales Trend - !\[Monthly Trends](screenshots/Monthly\_trend.png)
+🔹 Monthly Sales Trend - ![Monthly Trends](screenshots/Monthly_trend.png)
 
 ```sql
 
 SELECT 
 
-    DATE\_FORMAT(STR\_TO\_DATE(`Order Date`, '%m/%d/%Y'), '%Y-%m') AS month,
+    DATE_FORMAT(STR_TO_DATE(`Order Date`, '%m/%d/%Y'), '%Y-%m') AS month,
 
-    SUM(sales) AS total\_sales
+    SUM(sales) AS total_sales
 
 FROM orders
 
@@ -118,7 +118,7 @@ ORDER BY month;
 
 
 
-🔹 Customer Ranking (Advanced) - !\[Rank of customers](screenshots/rank\_of\_customers.png)
+🔹 Customer Ranking (Advanced) - ![Rank of customers](screenshots/rank_of_customers.png)
 
 ```sql
 
@@ -126,9 +126,9 @@ SELECT
 
     `Customer Name`,
 
-     SUM(sales) AS total\_sales,
+     SUM(sales) AS total_sales,
 
-     RANK() OVER (ORDER BY SUM(sales) DESC) AS rank\_position
+     RANK() OVER (ORDER BY SUM(sales) DESC) AS rank_position
 
 FROM orders
 
