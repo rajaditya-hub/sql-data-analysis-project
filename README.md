@@ -104,9 +104,9 @@ LIMIT 5;
 
 SELECT 
 
-&#x20;   DATE\_FORMAT(STR\_TO\_DATE(`Order Date`, '%m/%d/%Y'), '%Y-%m') AS month,
+    DATE\_FORMAT(STR\_TO\_DATE(`Order Date`, '%m/%d/%Y'), '%Y-%m') AS month,
 
-&#x20;   SUM(sales) AS total\_sales
+    SUM(sales) AS total\_sales
 
 FROM orders
 
@@ -124,11 +124,11 @@ ORDER BY month;
 
 SELECT 
 
-&#x20;   `Customer Name`,
+    `Customer Name`,
 
-&#x20;   SUM(sales) AS total\_sales,
+     SUM(sales) AS total\_sales,
 
-&#x20;   RANK() OVER (ORDER BY SUM(sales) DESC) AS rank\_position
+     RANK() OVER (ORDER BY SUM(sales) DESC) AS rank\_position
 
 FROM orders
 
